@@ -1,20 +1,15 @@
-import { useState } from 'react';
-import { Heading, HStack, Image, Text, VStack, Button } from '@chakra-ui/react';
+import { Heading, HStack, Image, Text, VStack, Flex } from '@chakra-ui/react';
 
 
 export default function Movie(props) {
-  const { src, title, description, rating, alt } = props;
-  const [ show, setShow ] = useState(false);
-
-  const onMouseOver = () => setShow(true);
-  const onMouseLeave = () => setShow(false);
+  const { src, title, description, rating, alt, ratingColor } = props;
 
   return (
     <VStack
       w='300px'
       maxH='450px'
       m='1rem'
-      bgColor='blue.50'
+      bgColor='blackAlpha.900'
       boxShadow='5px 5px 20px 7px #a3a3a3'
       border='1px'
       position='relative'
@@ -27,25 +22,25 @@ export default function Movie(props) {
           transform: 'translateY(0)'
         }
       }}
-      onMouseOver={onMouseOver}
-      onMouseLeave={onMouseLeave}
     >
 
       <Image 
-        w='100%' 
+        w='100%'
+        h='89%' 
         src={src}
         alt={alt}
       />
 
       <HStack 
-        alignItems='center'
-        justifyContent='center' 
         p={2}
         letterSpacing='0.5px'
       >
         <Heading 
           as='h3' 
           fontSize='medium'
+          mr={2}
+          lineHeight={1}
+          color='whiteAlpha.900'
         >
           {title}
         </Heading>
@@ -57,7 +52,8 @@ export default function Movie(props) {
           fontSize='small'
           fontWeight='bold'
           borderRadius='sm'
-          bgColor='gray.300'
+          color='blackAlpha.900'
+          bgColor={ratingColor}
         >
           {rating}
         </Text>
@@ -74,13 +70,19 @@ export default function Movie(props) {
           left={0}
           bottom={0}
           right={0}
-          maxH='100%'
+          maxH='200px'
           transform='translateY(101%)'
           transition='transform 0.3s ease-in'
-          bgColor='#fff'
+          bgColor='#201c1c'
         >
-          <Heading as='h3' fontSize='xl'>Overview</Heading>
-          <Text>
+          <Heading 
+            as='h3' 
+            fontSize='xl'
+            color='#eee6e6'
+          >Overview
+          </Heading>
+
+          <Text color='#eee6e6' lineHeight={1}>
             {description}
           </Text>
         </VStack>
