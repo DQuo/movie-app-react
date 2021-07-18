@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Box } from '@chakra-ui/react';
 import MovieContainer from './MovieContainer';
 import SearchBar from './SearchBar';
+import RecentSearch from './RecentSearch';
+import { useRef } from 'react';
 
 const API_URL = process.env.REACT_APP_API_URL;
 const IMG_PATH = process.env.REACT_APP_IMG_PATH;
@@ -12,6 +14,7 @@ export default function MainComponent() {
   const [movies, setMovies] = useState();
   const [loading, setLoading] = useState(true);
   const [ query, setQuery ] = useState('');
+  const [ queryList, setQueryList ] = useState([]);
 
   async function fetchMovies(url) {
     try {
@@ -31,6 +34,8 @@ export default function MainComponent() {
 
     if ( query && query !== '') {
       fetchMovies(SEARCH_URL + query);
+      setQueryList((prev) => [...prev, query]);
+      console.log(queryList);
       setQuery('');
     }
     else {
@@ -45,7 +50,8 @@ export default function MainComponent() {
 
   return (
     <Box>
-      <SearchBar handleSubmit={handleSubmit} query={query} setQuery={setQuery} />
+      <SearchBar handleSubmit={handleSubmit} query={query} setQuery={setQuery} setQueryList={setQueryList}/>
+      <RecentSearch queryList={queryList} setQueryList={setQueryList} />
       <MovieContainer movies={movies} loading={loading} imgPath={IMG_PATH}/>
     </Box>
   );
