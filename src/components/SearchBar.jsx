@@ -17,7 +17,7 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
             type='text'
             value={query}
             onChange={handleChange} 
-            placeholder="Search for movies.."
+            placeholder="Please search for movies.."
             _placeholder={{ color: 'gray.300' }}
             borderColor='blackAlpha.500'
           />
