@@ -1,4 +1,4 @@
-import { Button, HStack, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
+import { Button, HStack, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
 
 
 
@@ -12,8 +12,9 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
     <HStack as='header' d='flex' justifyContent='center' p={4} mx={4} mb={4}>
       <form onSubmit={handleSubmit}>
         <InputGroup>
-          <InputLeftElement />
           <Input 
+            w='500px'
+            color='white'
             type='text'
             value={query}
             onChange={handleChange} 
@@ -21,8 +22,14 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
             _placeholder={{ color: 'gray.300' }}
             borderColor='blackAlpha.500'
           />
+      
+          <InputRightElement width="4.5rem" mr={1} ml={2}>
+            <Button h="1.75rem" size="sm" type='submit'>
+              Search
+            </Button>
+          </InputRightElement>
+
         </InputGroup>
-        <Button type='submit'>Search</Button>
       </form>
     </HStack>
   )
