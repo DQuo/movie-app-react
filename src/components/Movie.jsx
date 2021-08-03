@@ -1,4 +1,4 @@
-import { Heading, HStack, Image, Text, VStack, Flex } from '@chakra-ui/react';
+import { Heading, HStack, Image, Text, VStack } from '@chakra-ui/react';
 
 
 export default function Movie(props) {
