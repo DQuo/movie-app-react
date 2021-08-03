@@ -1,6 +1,6 @@
-import { HStack, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
+import { Button, HStack, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
 
-import DrawerExample from './Drawer';
+
 
 export default function SearchBar({ handleSubmit, query, setQuery}) {
  
@@ -22,8 +22,8 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
             borderColor='blackAlpha.500'
           />
         </InputGroup>
+        <Button type='submit'>Search</Button>
       </form>
-      <DrawerExample />
     </HStack>
   )
 }
