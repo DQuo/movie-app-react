@@ -1,7 +1,6 @@
-
 import { HStack, Input, InputGroup, InputLeftElement } from '@chakra-ui/react'
 
-
+import DrawerExample from './Drawer';
 
 export default function SearchBar({ handleSubmit, query, setQuery}) {
  
@@ -10,7 +9,7 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
   }
 
   return (
-    <HStack as='header' d='flex' justifyContent='center' p={4} m={4}>
+    <HStack as='header' d='flex' justifyContent='center' p={4} mx={4} mb={4}>
       <form onSubmit={handleSubmit}>
         <InputGroup>
           <InputLeftElement />
@@ -24,6 +23,7 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
           />
         </InputGroup>
       </form>
+      <DrawerExample />
     </HStack>
   )
 }

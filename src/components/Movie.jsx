@@ -6,11 +6,12 @@ export default function Movie(props) {
 
   return (
     <VStack
+      as='main'
       w='300px'
       maxH='450px'
       m='1rem'
       bgColor='blackAlpha.900'
-      boxShadow='5px 5px 20px 7px #a3a3a3'
+      boxShadow='5px 5px 20px 7px #000000'
       border='1px'
       position='relative'
       overflow='hidden'

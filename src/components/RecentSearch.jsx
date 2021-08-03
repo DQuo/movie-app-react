@@ -7,12 +7,17 @@ export default function RecentSearch({ queryList, setQueryList }) {
     setQueryList([]);
   }
 
+  
+
   return (
     <Box textAlign='center' m={5}>
-      <Heading as='h3' fontSize='large'>Recent Searches...</Heading>
+      {queryList.length !== 0 && (
+        <Heading as='h3' fontSize='large'>Recent Searches...</Heading>
+      )}
+      
       <Flex justify='center'>
         { queryList.map((searchTerm, idx) => (
-          <Badge 
+          <Badge
             key={idx} 
             colorScheme='green'
             m={1}
@@ -21,15 +26,19 @@ export default function RecentSearch({ queryList, setQueryList }) {
           </Badge>
         )) }
       </Flex>
-      <Button
-        onClick={handleClick}
-        w='100px' 
-        h='20px' 
-        color='whiteAlpha.800' 
-        bgColor='blue.400'
-      >
-        Clear History
-      </Button>
+
+      {queryList.length !== 0 && (
+        <Button
+          onClick={handleClick}
+          w='100px' 
+          h='20px' 
+          color='whiteAlpha.800' 
+          bgColor='blue.400'
+        >
+          Clear History
+        </Button>
+      )}
+      
     </Box>
   )
 }

@@ -6,7 +6,7 @@ export default function MovieContainer({ movies, loading, imgPath }) {
   return (
     <Box>
       <Box textAlign='center'>
-        <Heading>Popular Movies</Heading>
+        <Heading color='whiteAlpha.600'>Popular Movies</Heading>
       </Box>
       <Flex wrap='wrap' justify='center' m={4}>
         { loading === true ? <div>Loading Movies...</div> : (

@@ -3,7 +3,8 @@ import { Box } from '@chakra-ui/react';
 import MovieContainer from './MovieContainer';
 import SearchBar from './SearchBar';
 import RecentSearch from './RecentSearch';
-import { useRef } from 'react';
+import DrawerExample from './Drawer';
+
 
 const API_URL = process.env.REACT_APP_API_URL;
 const IMG_PATH = process.env.REACT_APP_IMG_PATH;
@@ -49,10 +50,11 @@ export default function MainComponent() {
 
 
   return (
-    <Box>
+    <Box bgColor='red.600'>
       <SearchBar handleSubmit={handleSubmit} query={query} setQuery={setQuery} setQueryList={setQueryList}/>
       <RecentSearch queryList={queryList} setQueryList={setQueryList} />
       <MovieContainer movies={movies} loading={loading} imgPath={IMG_PATH}/>
+      <DrawerExample />
     </Box>
   );
 }
