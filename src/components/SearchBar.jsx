@@ -13,7 +13,7 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
       <form onSubmit={handleSubmit}>
         <InputGroup>
           <Input 
-            w='500px'
+            w='70vw'
             color='white'
             type='text'
             value={query}
