@@ -23,6 +23,7 @@ export default function Movie(props) {
           transform: 'translateY(0)'
         }
       }}
+      onClick={() => ''}
     >
 
       <Image 
