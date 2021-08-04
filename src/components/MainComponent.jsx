@@ -30,14 +30,14 @@ export default function MainComponent() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, ref) => {
     e.preventDefault();
 
     if ( query && query !== '') {
       fetchMovies(SEARCH_URL + query);
       setQueryList((prev) => [...prev, query]);
-      console.log(queryList);
       setQuery('');
+      ref.current.blur();
     }
     else {
       window.location.reload();

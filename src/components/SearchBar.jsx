@@ -1,4 +1,5 @@
 import { Button, HStack, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
+import { useRef } from 'react';
 
 
 
@@ -8,11 +9,16 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
     setQuery(e.target.value);
   }
 
+  const inputRef = useRef();
+
+
   return (
     <HStack as='header' d='flex' justifyContent='center' p={4} mx={4} mb={4}>
-      <form onSubmit={handleSubmit}>
+
+      <form onSubmit={(e) => handleSubmit(e, inputRef)}>
         <InputGroup>
-          <Input 
+          <Input
+            ref={inputRef}
             w='70vw'
             color='white'
             type='text'
@@ -31,6 +37,7 @@ export default function SearchBar({ handleSubmit, query, setQuery}) {
 
         </InputGroup>
       </form>
+
     </HStack>
   )
 }
