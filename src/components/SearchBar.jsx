@@ -1,5 +1,5 @@
 import { Button, HStack, Input, InputGroup, InputRightElement } from '@chakra-ui/react'
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
 
 
