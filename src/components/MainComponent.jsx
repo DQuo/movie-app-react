@@ -44,6 +44,11 @@ export default function MainComponent() {
     }
   }
 
+  const handleBadgeClick = async (term) => {
+    await fetchMovies(SEARCH_URL + term);
+    console.log(movies);
+  };
+
   useEffect(() => {
       fetchMovies(API_URL);
   }, []);
@@ -51,9 +56,22 @@ export default function MainComponent() {
 
   return (
     <Box bgColor='red.600'>
-      <SearchBar handleSubmit={handleSubmit} query={query} setQuery={setQuery} setQueryList={setQueryList}/>
-      <RecentSearch queryList={queryList} setQueryList={setQueryList} />
-      <MovieContainer movies={movies} loading={loading} imgPath={IMG_PATH}/>
+      <SearchBar 
+        handleSubmit={handleSubmit} 
+        query={query} 
+        setQuery={setQuery} 
+        setQueryList={setQueryList}
+      />
+      <RecentSearch 
+        queryList={queryList} 
+        setQueryList={setQueryList}
+        onClick={handleBadgeClick}
+      />
+      <MovieContainer 
+        movies={movies} 
+        loading={loading} 
+        imgPath={IMG_PATH}
+      />
     </Box>
   );
 }

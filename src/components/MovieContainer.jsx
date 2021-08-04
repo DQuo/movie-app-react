@@ -21,7 +21,6 @@ export default function MovieContainer({ movies, loading, imgPath }) {
                 ratingColor = 'red.400'
               }
 
-
               return (
                 <Movie 
                   key={movie.id}
