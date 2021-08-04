@@ -1,7 +1,7 @@
 import { Box, Heading, Flex, Badge, Button } from '@chakra-ui/react'
 
 
-export default function RecentSearch({ queryList, setQueryList }) {
+export default function RecentSearch({ queryList, setQueryList, onClick }) {
 
   const handleClick = (e) => {
     setQueryList([]);
@@ -21,6 +21,8 @@ export default function RecentSearch({ queryList, setQueryList }) {
             key={idx} 
             colorScheme='green'
             m={1}
+            onClick={() => onClick(searchTerm)}
+            cursor={'pointer'}
           >
             {searchTerm}
           </Badge>

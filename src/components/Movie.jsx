@@ -7,7 +7,7 @@ export default function Movie(props) {
   return (
     <VStack
       as='main'
-      w='300px'
+      w='15em'
       maxH='450px'
       m='1rem'
       bgColor='blackAlpha.900'
