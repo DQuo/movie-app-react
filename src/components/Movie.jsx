@@ -21,7 +21,7 @@ export default function Movie(props) {
         zIndex: '1',
         '.overview': {
           transform: 'translateY(0)'
-        }
+        },
       }}
       onClick={() => ''}
     >

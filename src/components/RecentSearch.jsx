@@ -8,7 +8,6 @@ export default function RecentSearch({ queryList, setQueryList, onClick }) {
   }
 
   
-
   return (
     <Box textAlign='center' m={5}>
       {queryList.length !== 0 && (

@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@chakra-ui/react';
-import MovieContainer from './MovieContainer';
-import SearchBar from './SearchBar';
-import RecentSearch from './RecentSearch';
+import HomePage from '../pages/HomePage';
+import { Route, Switch } from 'react-router-dom';
 
 
 
@@ -56,22 +55,21 @@ export default function MainComponent() {
 
   return (
     <Box bgColor='red.600'>
-      <SearchBar 
-        handleSubmit={handleSubmit} 
-        query={query} 
-        setQuery={setQuery} 
-        setQueryList={setQueryList}
-      />
-      <RecentSearch 
-        queryList={queryList} 
-        setQueryList={setQueryList}
-        onClick={handleBadgeClick}
-      />
-      <MovieContainer 
-        movies={movies} 
-        loading={loading} 
-        imgPath={IMG_PATH}
-      />
+      <Switch>
+        <Route exact path='/'>
+          <HomePage 
+            handleSubmit={handleSubmit}
+            handleBadgeClick={handleBadgeClick}
+            movies={movies}
+            query={query}
+            setQuery={setQuery}
+            queryList={queryList}
+            setQueryList={setQueryList}
+            loading={loading}
+            imgPath={IMG_PATH}
+          />
+        </Route>
+      </Switch>
     </Box>
   );
 }
