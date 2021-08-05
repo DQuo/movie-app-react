@@ -1,4 +1,5 @@
-import { Heading, HStack, Image, Text, VStack } from '@chakra-ui/react';
+import { Heading, HStack, Image, Text, VStack, Link as ChakraLink } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 
 export default function Movie(props) {
@@ -25,13 +26,17 @@ export default function Movie(props) {
       }}
       onClick={() => ''}
     >
-
-      <Image 
+      <ChakraLink 
+        as={Link} 
+        to='/movie'
         w='100%'
         h='89%' 
-        src={src}
-        alt={alt}
-      />
+      >
+        <Image 
+          src={src}
+          alt={alt}
+        />
+      </ChakraLink>
 
       <HStack 
         p={2}

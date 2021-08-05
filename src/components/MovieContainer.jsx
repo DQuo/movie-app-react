@@ -1,4 +1,6 @@
 import { Box, Flex, Heading } from '@chakra-ui/react';
+
+
 import Movie from './Movie';
 
 
@@ -15,9 +17,11 @@ export default function MovieContainer({ movies, loading, imgPath }) {
 
               if ( movie.vote_average >= 7 ) {
                 ratingColor = 'green.400';
-              } else if ( movie.vote_average < 7 && movie.vote_average >= 6 ) {
+              } 
+              else if ( movie.vote_average < 7 && movie.vote_average >= 6 ) {
                 ratingColor = 'yellow.400'
-              } else {
+              } 
+              else {
                 ratingColor = 'red.400'
               }
 
